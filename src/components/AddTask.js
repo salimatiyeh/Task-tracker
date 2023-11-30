@@ -6,7 +6,7 @@ const AddTask = ({ onAdd }) => {
   const [reminder, setReminder] = useState(false)
 
   const onSubmit = (e) => {
-    e.preventDeafult()
+    e.preventDefault()
 
     if (!text) {
       alert('Please add a task')
@@ -26,7 +26,7 @@ const AddTask = ({ onAdd }) => {
         <label>Task</label>
         <input
           type='text'
-          placeHolder='Add Task'
+          placeholder='Add Task'
           value={text}
           onChange={(e) => setText(e.target.value)}
         />
@@ -35,7 +35,7 @@ const AddTask = ({ onAdd }) => {
         <label>Day & Time</label>
         <input
           type='text'
-          placeHolder='Add Day & Time'
+          placeholder='Add Day & Time'
           value={day}
           onChange={(e) => setDay(e.target.value)}
         />
@@ -44,6 +44,7 @@ const AddTask = ({ onAdd }) => {
         <label>Set Reminder</label>
         <input
           type='checkbox'
+          checked={reminder}
           value={reminder}
           onChange={(e) => setReminder(e.currentTarget.checked)}
         />
